@@ -17,4 +17,4 @@ List of members and their primary roles in project
 1. Roland Abrahantes Lead Software Engineer
 2. Winston Kone Project Manager
 3. Xavier Lazo GUI Engineer
-4. Hailey Montgomery Software Engineer
+4. Hailey Montgomery - Software Engineer
