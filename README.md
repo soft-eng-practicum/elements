@@ -14,7 +14,7 @@ We are using **Slack**, ggc-dev.slack.com, channel *chemistryapp*
 
 List of members and their primary roles in project
 
-1. Roland Abrahantes Lead Software Engineer
+1. Roland Abrahantes - *Lead Software Engineer*
 2. Winston Kone - *Project Manager and Client Liaison*
-3. Xavier Lazo GUI Engineer
-4. Hailey Montgomery - *Software Engineer*
+3. Xavier Lazo -  *GUI Engineer*
+4. Hailey Montgomery - *Lead Tester and Software Engineer*
