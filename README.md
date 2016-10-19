@@ -10,7 +10,7 @@ Team name:
 We are using **PIVOTAL TRACKER**, the URL is https://www.pivotaltracker.com/n/projects/1860167
 
 Our **communication tool**:
-We are using **Slack**, ggc-dev.slack.com, channel *chemistryapp*
+We are using Text/email , **Slack**, ggc-dev.slack.com, channel *chemistryapp*
 
 List of members and their primary roles in project
 
