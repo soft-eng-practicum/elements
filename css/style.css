@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Game styles */
 
 #game {
-    background: #fff;
+    background: #ffff;
 }
 
 .game-wrapper {
@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Study Tips styles */
 
 #study {
-    background: #000;
+    background: #0000;
 }
 
 .study-wrapper {
@@ -237,7 +237,7 @@ input:focus,
 #footer {
     color: #fff;
     background-color: #121212;
-    text-align: center;
+    
 }
 
 /* Media queries */
