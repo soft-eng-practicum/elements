@@ -1,17 +1,6 @@
 language: node_js
 node_js:
-  - "6"
-  - "5"
-  - "4"
-  - "iojs"
-branches:
-  only:
-    - angular
-before_script:
-  - npm install -g bower
-  - npm install -g gulp
-  - npm install phantomjs
-  - npm install -g karma
-  - bower install
-  - gulp build
-  - gulp style
+  - "0.6"
+  - "0.8"
+before script:
+    -"npm i -g jasmine-node
