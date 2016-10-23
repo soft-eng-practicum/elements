@@ -234,18 +234,18 @@ var isDrawnBack = function() {
 //Information written to the client is handled by this function
 
 var writeInfo = function(mousePos) {
-  ctx.font = "11px Helvetica";
+  ctx.font = "14px Helvetica";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
   if(isInCircle(mousePos) && mouseDown) {
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "blue";
   } else {
     ctx.fillStyle = "black";
   }
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
-  ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
+//  ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
   ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
-  ctx.fillText("Angle 2:" + angleBetween(mousePos, shootingCirc), 20, 80);
+//  ctx.fillText("Angle 2:" + angleBetween(mousePos, shootingCirc), 20, 80);
 }
 
 //Every game engine needs an update function to display to the user the coordinates
@@ -330,7 +330,7 @@ var main = function() {
   requestAnimationFrame(main);
 }
 
-
+//The main method is where all the other methods get called from
 
 var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
