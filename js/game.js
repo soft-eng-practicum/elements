@@ -25,6 +25,9 @@ var direction4 = 1;
 var TO_RADIANS = Math.PI/180;
 var theAngle = 0;
 
+var music;
+
+
 var playerScore = 0;
 var questions = [];
 var questionTest = "Do you like Chemistry?";
@@ -37,8 +40,8 @@ canvas.height=window.innerHeight;
 
 document.body.appendChild(canvas);
 
-cWidth=canvas.width;
-cHeight=canvas.height;
+cWidth = canvas.width;
+cHeight = canvas.height;
 
 
 
