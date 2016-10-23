@@ -11,6 +11,8 @@ var ctx = canvas.getContext("2d");
 var character2 = new Image();
 character2.src = "Images/gun.png";
 
+var rotatedCoordinates = 0;
+
 var bubblex = 200;
 var bubble2x = 250;
 var bubble3x = 300;
@@ -21,7 +23,7 @@ var direction2 = 1;
 var direction3 = 1;
 var direction4 = 1;
 var TO_RADIANS = Math.PI/180;
-var theAngle = 1;
+var theAngle = 0;
 
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
@@ -94,6 +96,7 @@ addEventListener("mouseup", function(evt) {
   mousePos = getMousePos(canvas, evt);
   mouseUp = true;
   mouseDown = false;
+  rotatedCoordinates = Math.PI/2 - angleBetween(mousePos, shootingCirc);
 }, false);
 
 //function drawRotatedImage(image, x, y, angle)
@@ -113,8 +116,8 @@ function drawRotatedImage(image, x, y, angle)
 
     // draw it up and to the left by half the width
     // and height of the image
-  //  ctx.drawImage(image, -(image.width/2), -(image.height/2));
-ctx.drawImage(image, 150, 150, 80, 80);
+  ctx.drawImage(image, -(image.width/2), -(image.height/2));
+// ctx.drawImage(image, 150, 150, 80, 80);
     // and restore the co-ords to how they were when we began
     ctx.restore();
 }
@@ -161,8 +164,8 @@ var getAimCoords = function(mousePos) {
 
   var angle = Math.PI/2 - angleBetween(mousePos, shootingCirc);
   var distance = Math.min(distBetween(shootingCirc, mousePos), shootingCirc.r);
-  var x = shootingCirc.x + distance*Math.sin(angle);
-  var y = shootingCirc.y + distance*Math.cos(angle);
+  var x = shootingCirc.x + distance * Math.sin(angle);
+  var y = shootingCirc.y + distance * Math.cos(angle);
   return {x:x, y:y};
 
   }
@@ -198,7 +201,7 @@ var drawBackCirc = {
 
 var drawCircles = function() {
   ctx.beginPath();
-//  ctx.arc(shootingCirc.x, shootingCirc.y, shootingCirc.r, 0, 2*Math.PI);
+  ctx.arc(shootingCirc.x, shootingCirc.y, shootingCirc.r, 0, 2*Math.PI);
   ctx.strokeStyle = "rgba(0,0,0,0.5)";
   ctx.stroke();
   ctx.beginPath();
@@ -239,6 +242,7 @@ var writeInfo = function(mousePos) {
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
   ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
   ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
+  ctx.fillText("Angle 2:" + angleBetween(mousePos, shootingCirc), 20, 80);
 }
 
 //Every game engine needs an update function to display to the user the coordinates
@@ -296,7 +300,8 @@ var update = function() {
       direction4 = 1;
     }
 
- theAngle = mousePos.x;
+ theAngle += rotatedCoordinates;
+
 
 }
 
@@ -305,7 +310,7 @@ var update = function() {
 var render = function() {
   // if(mousePos) writeInfo(mousePos);
   drawScene();
-  //drawCircles();
+  drawCircles();
   for(i=0; i<arrows.length; i++) {
     arrows[i].drawArrow();
   }
