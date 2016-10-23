@@ -1,10 +1,15 @@
 
 
-//The code to create the canvas is written below 
+
+//The code to create the canvas is written below
 
 var canvas = document.createElement("canvas");
 canvas.id = 'canvas';
 var ctx = canvas.getContext("2d");
+
+
+var character2 = new Image();
+character2.src = "Images/gun.png";
 
 var bubblex = 200;
 var bubble2x = 250;
@@ -15,7 +20,8 @@ var direction = 1;
 var direction2 = 1;
 var direction3 = 1;
 var direction4 = 1;
-
+var TO_RADIANS = Math.PI/180;
+var theAngle = 1;
 
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
@@ -90,6 +96,28 @@ addEventListener("mouseup", function(evt) {
   mouseDown = false;
 }, false);
 
+//function drawRotatedImage(image, x, y, angle)
+function drawRotatedImage(image, x, y, angle)
+{
+    // save the current co-ordinate system
+    // before we screw with it
+  //  var angle = Math.PI/2 - angleBetween(mousePos, shootingCirc);
+    ctx.save();
+
+    // move to the middle of where we want to draw our image
+    ctx.translate(x, y);
+
+    // rotate around that point, converting our
+    // angle from degrees to radians
+    ctx.rotate(angle * TO_RADIANS);
+
+    // draw it up and to the left by half the width
+    // and height of the image
+  //  ctx.drawImage(image, -(image.width/2), -(image.height/2));
+ctx.drawImage(image, 150, 150, 80, 80);
+    // and restore the co-ords to how they were when we began
+    ctx.restore();
+}
 
 var drawScene = function() {
   // increased groundPoint so arrows stick where they should in the ground
@@ -106,12 +134,19 @@ var drawScene = function() {
   bubble3.src = "Images/bubble.png";
   var bubble4 = new Image();
   bubble4.src = "Images/bubble.png";
+  var character = new Image();
+  character.src = "Images/gun.png";
 
  ctx.drawImage(background,0,0,1280,600);
  ctx.drawImage(bubble1, bubblex,200,80,80);
  ctx.drawImage(bubble2, bubble2x,100,80,80);
  ctx.drawImage(bubble3, bubble3x,300,80,80);
  ctx.drawImage(bubble4, bubble4x,400,80,80);
+ //ctx.rotate(180);
+ ctx.drawImage(character, 550, groundPoint - 80, 80, 80);
+// drawRotatedImage(character, 550, groundPoint - 80, angle);
+drawRotatedImage(character2, 150, 150, theAngle);
+
 
 }
 
@@ -120,10 +155,10 @@ var angleBetween = function(p1, p2) {
   return Math.atan2(p2.y-p1.y, p2.x-p1.x);
 }
 
-//We are using aiming coordinates and dials to indicate trajectory 
+//We are using aiming coordinates and dials to indicate trajectory
 
 var getAimCoords = function(mousePos) {
-  
+
   var angle = Math.PI/2 - angleBetween(mousePos, shootingCirc);
   var distance = Math.min(distBetween(shootingCirc, mousePos), shootingCirc.r);
   var x = shootingCirc.x + distance*Math.sin(angle);
@@ -132,14 +167,14 @@ var getAimCoords = function(mousePos) {
 
   }
 
-  
+
   var drawAimer = function() {
   if (drawnBack) {
     aimCoords = getAimCoords(mousePos);
     ctx.beginPath();
     ctx.moveTo(aimCoords.x, aimCoords.y);
     ctx.lineTo(shootingCirc.x, shootingCirc.y);
-    ctx.strokeStyle="rgba(0,0,0,0.2)";
+    ctx.strokeStyle= "rgba(0,0,0,0.2)";
     ctx.stroke();
   }
 }
@@ -147,7 +182,7 @@ var getAimCoords = function(mousePos) {
 //The shooting circle is what shows the user where the arrow is going
 
 var shootingCirc = {
-  x: 600,
+ x: 600,
   y: groundPoint-30,
   r: 75
 }
@@ -159,15 +194,15 @@ var drawBackCirc = {
   r: 10
 }
 
-//The draw circles is where the actual object gets drawn into the screen 
+//The draw circles is where the actual object gets drawn into the screen
 
 var drawCircles = function() {
   ctx.beginPath();
-  ctx.arc(shootingCirc.x, shootingCirc.y, shootingCirc.r, 0, 2*Math.PI);
+//  ctx.arc(shootingCirc.x, shootingCirc.y, shootingCirc.r, 0, 2*Math.PI);
   ctx.strokeStyle = "rgba(0,0,0,0.5)";
   ctx.stroke();
   ctx.beginPath();
-  ctx.arc(drawBackCirc.x, drawBackCirc.y, drawBackCirc.r, 0, 2*Math.PI);
+  ctx.arc(drawBackCirc.x, drawBackCirc.y, drawBackCirc.r, 0, 2 * Math.PI);
   ctx.stroke();
   drawAimer();
 }
@@ -215,9 +250,9 @@ var update = function() {
     currArrow.fireArrow();
     firedArrow = false;
   }
-  
+
   //The drawing area needs to be updated
-  
+
   ctx.clearRect(0,0,cWidth,cHeight);
 
     //this is the code for the first bubble
@@ -261,6 +296,8 @@ var update = function() {
       direction4 = 1;
     }
 
+ theAngle = mousePos.x;
+
 }
 
 //The rendering method draws the entire game
@@ -274,6 +311,7 @@ var render = function() {
   }
 if(mousePos) writeInfo(mousePos);
 drawCircles();
+//drawRotatedImage(character2, 150, 150, 30);
 }
 
 //Here is the main function that covers all the other important functions
