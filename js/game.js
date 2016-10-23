@@ -1,4 +1,6 @@
-
+//Software Development 2 GGC
+//Fall 2016
+//Chemistry Game
 
 
 //The code to create the canvas is written below
