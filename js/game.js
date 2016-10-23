@@ -27,6 +27,7 @@ var theAngle = 0;
 
 var playerScore = 0;
 var questions = [];
+var questionTest = "Do you like Chemistry?";
 
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
