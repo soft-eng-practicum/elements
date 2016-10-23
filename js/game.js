@@ -25,6 +25,9 @@ var direction4 = 1;
 var TO_RADIANS = Math.PI/180;
 var theAngle = 0;
 
+var playerScore = 0;
+var questions = [];
+
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
 
@@ -201,7 +204,7 @@ var drawBackCirc = {
 
 var drawCircles = function() {
   ctx.beginPath();
-  ctx.arc(shootingCirc.x, shootingCirc.y, shootingCirc.r, 0, 2*Math.PI);
+//  ctx.arc(shootingCirc.x, shootingCirc.y, shootingCirc.r, 0, 2*Math.PI);
   ctx.strokeStyle = "rgba(0,0,0,0.5)";
   ctx.stroke();
   ctx.beginPath();
