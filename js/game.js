@@ -28,6 +28,8 @@ var theAngle = 0;
 var playerScore = 0;
 var questions = [];
 
+var question1 = "Do you like Chemistry?";
+
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
 
@@ -250,7 +252,13 @@ var writeInfo = function(mousePos) {
   ctx.font = "25px Helvetica";
   ctx.textAlign = "right";
   ctx.textBaseline = "top";
-  ctx.fillText("Score", cWidth - 100, 20);
+  ctx.fillText("Score: " + playerScore, cWidth - 100, 20);
+
+  ctx.font = "18px Helvetica";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+  ctx.fillText(question1, cWidth/2, 20);
+
 }
 
 //Every game engine needs an update function to display to the user the coordinates
