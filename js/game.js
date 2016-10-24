@@ -1,6 +1,4 @@
-//Software Development 2 GGC
-//Fall 2016
-//Chemistry Game
+
 
 
 //The code to create the canvas is written below
@@ -27,12 +25,8 @@ var direction4 = 1;
 var TO_RADIANS = Math.PI/180;
 var theAngle = 0;
 
-var music;
-
-
 var playerScore = 0;
 var questions = [];
-var questionTest = "Do you like Chemistry?";
 
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
@@ -240,7 +234,7 @@ var isDrawnBack = function() {
 //Information written to the client is handled by this function
 
 var writeInfo = function(mousePos) {
-  ctx.font = "14px Helvetica";
+  ctx.font = "13px Helvetica";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
   if(isInCircle(mousePos) && mouseDown) {
@@ -249,9 +243,14 @@ var writeInfo = function(mousePos) {
     ctx.fillStyle = "black";
   }
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
-//  ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
+  ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
   ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
 //  ctx.fillText("Angle 2:" + angleBetween(mousePos, shootingCirc), 20, 80);
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText("Score", cWidth - 100, 20);
 }
 
 //Every game engine needs an update function to display to the user the coordinates
@@ -336,7 +335,7 @@ var main = function() {
   requestAnimationFrame(main);
 }
 
-//The main method is where all the other methods get called from
+
 
 var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
