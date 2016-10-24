@@ -1,6 +1,6 @@
-
-
-
+//October 10, 2016
+//Software Development 2 GGC
+//Chemistry Game
 //The code to create the canvas is written below
 
 var canvas = document.createElement("canvas");
@@ -29,6 +29,8 @@ var playerScore = 0;
 var questions = [];
 
 var question1 = "Do you like Chemistry?";
+
+var music;
 
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
@@ -318,6 +320,8 @@ var update = function() {
 
  theAngle += rotatedCoordinates;
 
+//  music = new sound("g.mp3");
+//  music.play();
 
 }
 
@@ -340,6 +344,7 @@ drawCircles();
 var main = function() {
   update();
   render();
+
   requestAnimationFrame(main);
 }
 
