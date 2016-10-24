@@ -1,4 +1,8 @@
-// This is where all the bullets go 
+//October 10, 2016
+//Software Development 2 GGC
+//Chemistry Game
+
+// This is where all the bullets go
 
 
 var arrows = [];
@@ -7,31 +11,40 @@ var arrows = [];
 var speedMod = 4;
 
 var addArrow = function() {
-  arrows.unshift(new Arrow()); 
+
+  arrows.unshift(new Arrow());
   currArrow = arrows[0];
 }
 
 
 function Arrow() {
+
   this.x = shootingCirc.x;
   this.y = shootingCirc.y;
   this.arrowTipCoords = {
     x: this.x + 20,
     y: this.y
+
   };
-  
-  
-  
+
+
+
   this.leftTipCoords = {
+
     x: this.x + 17,
     y: this.y - 3
+
   }
-  
-  
+
+
   this.rightTipCoords = {
+
     x: this.x + 17,
     y: this.y + 3
+
   }
+
+
   this.velX = 0;
   this.velY = 0;
   this.speed = 0;
@@ -40,7 +53,7 @@ function Arrow() {
 
 
 Arrow.prototype.fireArrow = function() {
-  
+
   if (mousePos && !this.firing) {
     this.speed = Math.min(shootingCirc.r,
                  distBetween(shootingCirc, mousePos)) / speedMod;
@@ -53,7 +66,7 @@ Arrow.prototype.fireArrow = function() {
 
 
 Arrow.prototype.calcTrajectory = function() {
-  
+
   if (this.y <= groundPoint && this.firing) {
     this.velY += gravity;
     this.x += this.velX;
@@ -65,10 +78,10 @@ Arrow.prototype.calcTrajectory = function() {
   }
 
   };
-  
-  
+
+
 Arrow.prototype.calcArrowHead = function() {
- 
+
  if (this.firing) {
     var angle = Math.atan2(this.velX, this.velY);
   } else if (mousePos && this == currArrow) {
@@ -86,10 +99,10 @@ Arrow.prototype.calcArrowHead = function() {
 
   };
 
-//The draw arrow function is what draws the projectiles on the screen 
+//The draw arrow function is what draws the projectiles on the screen
 
 Arrow.prototype.drawArrow = function() {
-  
+
   this.calcTrajectory();
   this.calcArrowHead();
   var arrowTip = this.arrowTipCoords;
