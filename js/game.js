@@ -29,6 +29,11 @@ var theAngle = 0;
 var playerScore = 0;
 var questions = [];
 
+var totalQuestions = 20;
+var totalAnswers = 80;
+
+var answers = [];
+
 var question1 = "Do you like Chemistry?";
 
 var music;
@@ -98,6 +103,15 @@ addEventListener("mousedown", function(evt) {
   mouseUp = false;
 }, false);
 
+//We re using this functions to populate an array with questions
+function fillQuestions{
+
+    for(var i = 0; i < totalQuestions; i++){
+//       addQuestion;
+    }
+}
+
+
 
 
 addEventListener("mouseup", function(evt) {
@@ -141,8 +155,6 @@ collision = 1;
             }
         }
 }
-
-
 
 var drawScene = function() {
   // increased groundPoint so arrows stick where they should in the ground
