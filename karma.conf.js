@@ -4,14 +4,14 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 	
-	browsers: ['Chrome', 'Chrome_without_security', 'Firefox', 'FirefoxDeveloper', 'FirefoxAurora', 'FirefoxNightly'],
+	browsers: ['Firefox', 'FirefoxDeveloper', 'FirefoxAurora', 'FirefoxNightly'],
 	
 	plugins: [
     // Karma will require() these plugins
     'karma-jasmine',
     'karma-chrome-launcher'
 	'karma-firefox-launcer'
-    ]
+    ],
 
 
     // frameworks to use
