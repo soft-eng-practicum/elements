@@ -3,6 +3,7 @@
 //Chemistry Game
 //The code to create the canvas is written below
 
+
 var canvas = document.createElement("canvas");
 canvas.id = 'canvas';
 var ctx = canvas.getContext("2d");
@@ -128,6 +129,20 @@ function drawRotatedImage(image, x, y, angle)
     // and restore the co-ords to how they were when we began
     ctx.restore();
 }
+
+function collisionCheck() {
+
+var theImage = ctx.getImageData(x, y, 25, 25);
+var pixel = theImage.data;
+for (var i = 0; n = pixel.length, i < n; i += 1) {
+if (pixel[i] == 0) {
+collision = 1;
+
+            }
+        }
+}
+
+
 
 var drawScene = function() {
   // increased groundPoint so arrows stick where they should in the ground
