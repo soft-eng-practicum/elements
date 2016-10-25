@@ -11,10 +11,6 @@ module.exports = function(config) {
     'karma-jasmine',
     'karma-chrome-launcher'
 	'karma-firefox-launcer'
-
-  // inlined plugins
-    {'framework:xyz': ['factory', factoryFn]},
-    require('./plugin-required-from-config')
     ]
 
 
