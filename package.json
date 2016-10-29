@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "karma start --browsers Firefox --single-run"
+	"start": "node ./bin/www",
+    "test": "karma start --browsers Chrome --single-run"
   },
   "devDependencies": {
     "jasmine-core": "^2.5.2",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.0.0",
+	"karma-jasmine": "^0.3.5",
     "karma-firefox-launcher": "^1.0.0"
   }
 }
