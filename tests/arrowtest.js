@@ -9,4 +9,5 @@ describe('Arrow', function()
 
       expect(x).toBe(true);
       expect(y).toBe(true);
+    });
 });
