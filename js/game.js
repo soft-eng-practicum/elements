@@ -27,14 +27,13 @@ var TO_RADIANS = Math.PI/180;
 var theAngle = 0;
 
 var playerScore = 0;
-var questions = [];
+//var totalQuestions = 20;
+var questions = JSON.parse(load("questions.js"));
+//var totalAnswers = 80;
 
-var totalQuestions = 20;
-var totalAnswers = 80;
+//var answers = [];
 
-var answers = [];
-
-var question1 = "Do you like Chemistry?";
+//var question1 = "Do you like Chemistry?";
 
 var music;
 
