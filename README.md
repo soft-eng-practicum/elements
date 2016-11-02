@@ -1,7 +1,7 @@
 README FILE
 
-Team name:
-**Elements**
+                                                   Team name:
+                                                  **Elements**
 
 **Repo location URL**
  https://github.com/soft-eng-practicum/elements.git
@@ -9,7 +9,7 @@ Team name:
 **Process tool and URL**
 We are using **PIVOTAL TRACKER**, the URL is https://www.pivotaltracker.com/n/projects/1860167
 
-Our **communication tool**:
+Our **communication tool**: 
 We are using Text/email , **Slack**, ggc-dev.slack.com, channel *chemistryapp*
 
 List of members and their primary roles in project
