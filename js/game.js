@@ -14,6 +14,8 @@ character2.src = "Images/gun.png";
 
 var rotatedCoordinates = 0;
 
+var currentArrowCoor = 0;
+
 var bubblex = 200;
 var bubble2x = 250;
 var bubble3x = 300;
@@ -31,6 +33,8 @@ var questions = [];
 
 var totalQuestions = 20;
 var totalAnswers = 80;
+
+var previousArrow;
 
 var answers = [];
 
@@ -104,12 +108,12 @@ addEventListener("mousedown", function(evt) {
 }, false);
 
 //We re using this functions to populate an array with questions
-function fillQuestions{
+//function fillQuestions(){
 
-    for(var i = 0; i < totalQuestions; i++){
+  //  for(var i = 0; i < totalQuestions; i++){
 //       addQuestion;
-    }
-}
+  //  }
+//}
 
 
 
@@ -146,15 +150,25 @@ function drawRotatedImage(image, x, y, angle)
 
 function collisionCheck() {
 
-var theImage = ctx.getImageData(x, y, 25, 25);
-var pixel = theImage.data;
-for (var i = 0; n = pixel.length, i < n; i += 1) {
-if (pixel[i] == 0) {
-collision = 1;
+//var theImage = ctx.getImageData(x, y, 25, 25);
+//var pixel = theImage.data;
+//for (var i = 0; n = pixel.length, i < n; i += 1) {
+//if (pixel[i] == 0) {
+//collision = 1;
 
-            }
-        }
-}
+      //     }
+
+//      bubblex;
+//      bubble2x;
+//      bubble3x;
+//      bubble4x;
+
+       currArrow.x;
+       currArrow.y;
+
+
+       }
+
 
 var drawScene = function() {
   // increased groundPoint so arrows stick where they should in the ground
@@ -255,6 +269,8 @@ var isFiredArrow = function() {
 
 
 
+
+
 var isDrawnBack = function() {
   if (mousePos && isInCircle(mousePos)) {
     if (mouseDown) drawnBack = true;
@@ -276,7 +292,10 @@ var writeInfo = function(mousePos) {
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
   ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
   ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
-//  ctx.fillText("Angle 2:" + angleBetween(mousePos, shootingCirc), 20, 80);
+  ctx.fillText("Angle 2:" + currentArrowCoor, 20, 80);
+
+
+
 
   ctx.font = "25px Helvetica";
   ctx.textAlign = "right";
@@ -297,6 +316,7 @@ var update = function() {
   isFiredArrow();
   if (firedArrow) {
     currArrow.fireArrow();
+    currentArrowCoor = currArrow.x;
     firedArrow = false;
   }
 
@@ -347,6 +367,11 @@ var update = function() {
 
  theAngle += rotatedCoordinates;
 
+if(arrows.length > 1){
+  currentArrowCoor = arrows[1].rightTipCoords.x;
+}
+
+//currentArrowCoor = arrows.length;
 //  music = new sound("g.mp3");
 //  music.play();
 
@@ -360,10 +385,13 @@ var render = function() {
   drawCircles();
   for(i=0; i<arrows.length; i++) {
     arrows[i].drawArrow();
+//    currentArrowCoor = arrows[i].arrowTipCoords.x;
   }
 if(mousePos) writeInfo(mousePos);
+//currentArrowCoor = 0;
 drawCircles();
 //drawRotatedImage(character2, 150, 150, 30);
+
 }
 
 //Here is the main function that covers all the other important functions

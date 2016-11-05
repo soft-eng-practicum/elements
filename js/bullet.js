@@ -1,12 +1,10 @@
-//October 10, 2016
-//Software Development 2 GGC
-//Chemistry Game
-
 // This is where all the bullets go
 
 
 var arrows = [];
 
+var absoluteX;
+var absoluteY;
 
 var speedMod = 4;
 
@@ -30,21 +28,15 @@ function Arrow() {
 
 
   this.leftTipCoords = {
-
     x: this.x + 17,
     y: this.y - 3
-
   }
 
 
   this.rightTipCoords = {
-
     x: this.x + 17,
     y: this.y + 3
-
   }
-
-
   this.velX = 0;
   this.velY = 0;
   this.speed = 0;
