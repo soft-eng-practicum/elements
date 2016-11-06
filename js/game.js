@@ -14,7 +14,8 @@ character2.src = "Images/gun.png";
 
 var rotatedCoordinates = 0;
 
-var currentArrowCoor = 0;
+var currentArrowCoorX = 0;
+var currentArrowCoorY = 0;
 
 var bubblex = 200;
 var bubble2x = 250;
@@ -292,8 +293,8 @@ var writeInfo = function(mousePos) {
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
   ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
   ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
-  ctx.fillText("Angle 2:" + currentArrowCoor, 20, 80);
-
+  ctx.fillText("ArrowX: " + currentArrowCoorX, 20, 80);
+  ctx.fillText("ArrowY: " + currentArrowCoorY, 20, 100);
 
 
 
@@ -316,7 +317,7 @@ var update = function() {
   isFiredArrow();
   if (firedArrow) {
     currArrow.fireArrow();
-    currentArrowCoor = currArrow.x;
+//    currentArrowCoor = currArrow.x;
     firedArrow = false;
   }
 
@@ -368,7 +369,8 @@ var update = function() {
  theAngle += rotatedCoordinates;
 
 if(arrows.length > 1){
-  currentArrowCoor = arrows[1].rightTipCoords.x;
+  currentArrowCoorX = arrows[1].rightTipCoords.x;
+  currentArrowCoorY = arrows[1].rightTipCoords.y;
 }
 
 //currentArrowCoor = arrows.length;
