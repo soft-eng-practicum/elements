@@ -30,6 +30,8 @@ var TO_RADIANS = Math.PI/180;
 var theAngle = 0;
 
 var playerScore = 0;
+var playerChoice = 0;
+
 var questions = [];
 
 var totalQuestions = 20;
@@ -166,14 +168,14 @@ function collisionCheck() {
 
        if(currentArrowCoorX >= bubble4x && currentArrowCoorX <= bubble4x + 80){
            if(currentArrowCoorY >= 400 && currentArrowCoorY <= 480){
-              playerScore = "D";
+              playerChoice = "D";
            }
 
        }
 
        if(currentArrowCoorX >= bubblex && currentArrowCoorX <= bubblex + 80){
         if(currentArrowCoorY >= 200 && currentArrowCoorY <= 280){
-            playerScore = "B";
+            playerChoice = "B";
          }
 
       //   playerScore++;
@@ -181,7 +183,7 @@ function collisionCheck() {
 
        if(currentArrowCoorX >= bubble2x && currentArrowCoorX <= bubble2x + 80){
          if(currentArrowCoorY >= 100 && currentArrowCoorY <= 180){
-           playerScore = "A";
+           playerChoice = "A";
          }
 
     //     playerScore++;
@@ -190,7 +192,7 @@ function collisionCheck() {
        if(currentArrowCoorX >= bubble3x && currentArrowCoorX <= bubble3x + 80){
 
          if(currentArrowCoorY >= 300 && currentArrowCoorY <= 380){
-            playerScore = "C";
+            playerChoice = "C";
         }
 
     //     playerScore++;
@@ -330,7 +332,13 @@ var writeInfo = function(mousePos) {
   ctx.font = "25px Helvetica";
   ctx.textAlign = "right";
   ctx.textBaseline = "top";
-  ctx.fillText("Choice: " + playerScore, cWidth - 100, 20);
+  ctx.fillText("Choice: " + playerChoice, cWidth - 100, 20);
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText("Score: " + playerScore, cWidth - 100, 60);
+
 
   ctx.font = "18px Helvetica";
   ctx.textAlign = "center";
