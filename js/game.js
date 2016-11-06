@@ -165,7 +165,19 @@ function collisionCheck() {
 //      bubble4x;
 
        if(currentArrowCoorX >= bubble4x && currentArrowCoorX <= bubble4x + 80){
-         playerScore += 1;
+         playerScore++;
+       }
+
+       if(currentArrowCoorX >= bubblex && currentArrowCoorX <= bubblex + 80){
+         playerScore++;
+       }
+
+       if(currentArrowCoorX >= bubble2x && currentArrowCoorX <= bubble2x + 80){
+         playerScore++;
+       }
+
+       if(currentArrowCoorX >= bubble3x && currentArrowCoorX <= bubble3x + 80){
+         playerScore++;
        }
 
 
