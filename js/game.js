@@ -206,6 +206,11 @@ function collisionCheck() {
 
        }
 
+function answerCheck{
+
+  
+}
+
 
 var drawScene = function() {
   // increased groundPoint so arrows stick where they should in the ground
