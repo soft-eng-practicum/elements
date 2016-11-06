@@ -172,7 +172,7 @@ function collisionCheck() {
        }
 
        if(currentArrowCoorX >= bubblex && currentArrowCoorX <= bubblex + 80){
-        if(currentArrowCoorY >= 400 && currentArrowCoorY <= 480){
+        if(currentArrowCoorY >= 200 && currentArrowCoorY <= 280){
             playerScore++;
          }
 
@@ -180,7 +180,7 @@ function collisionCheck() {
        }
 
        if(currentArrowCoorX >= bubble2x && currentArrowCoorX <= bubble2x + 80){
-         if(currentArrowCoorY >= 400 && currentArrowCoorY <= 480){
+         if(currentArrowCoorY >= 100 && currentArrowCoorY <= 180){
            playerScore++;
          }
 
@@ -189,7 +189,7 @@ function collisionCheck() {
 
        if(currentArrowCoorX >= bubble3x && currentArrowCoorX <= bubble3x + 80){
 
-         if(currentArrowCoorY >= 400 && currentArrowCoorY <= 480){
+         if(currentArrowCoorY >= 300 && currentArrowCoorY <= 380){
             playerScore++;
         }
 
