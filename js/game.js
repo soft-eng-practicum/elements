@@ -45,6 +45,11 @@ var question1 = "Do you like Chemistry?";
 
 var music;
 
+var answerA = "A: Yes";
+var answerB = "B: No";
+var answerC = "C: Maybe";
+var answerD = "D: Perhaps"
+
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
 
@@ -344,6 +349,14 @@ var writeInfo = function(mousePos) {
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
   ctx.fillText(question1, cWidth/2, 20);
+
+
+    ctx.font = "12px Helvetica";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    ctx.fillText(answerA + " " + answerB + " " + answerC + " " + answerD, cWidth/2, 60);
+
+
 
 }
 
