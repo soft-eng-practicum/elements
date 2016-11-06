@@ -166,14 +166,14 @@ function collisionCheck() {
 
        if(currentArrowCoorX >= bubble4x && currentArrowCoorX <= bubble4x + 80){
            if(currentArrowCoorY >= 400 && currentArrowCoorY <= 480){
-              playerScore++;
+              playerScore = "D";
            }
 
        }
 
        if(currentArrowCoorX >= bubblex && currentArrowCoorX <= bubblex + 80){
         if(currentArrowCoorY >= 200 && currentArrowCoorY <= 280){
-            playerScore++;
+            playerScore = "B";
          }
 
       //   playerScore++;
@@ -181,7 +181,7 @@ function collisionCheck() {
 
        if(currentArrowCoorX >= bubble2x && currentArrowCoorX <= bubble2x + 80){
          if(currentArrowCoorY >= 100 && currentArrowCoorY <= 180){
-           playerScore++;
+           playerScore = "A";
          }
 
     //     playerScore++;
@@ -190,7 +190,7 @@ function collisionCheck() {
        if(currentArrowCoorX >= bubble3x && currentArrowCoorX <= bubble3x + 80){
 
          if(currentArrowCoorY >= 300 && currentArrowCoorY <= 380){
-            playerScore++;
+            playerScore = "C";
         }
 
     //     playerScore++;
@@ -330,7 +330,7 @@ var writeInfo = function(mousePos) {
   ctx.font = "25px Helvetica";
   ctx.textAlign = "right";
   ctx.textBaseline = "top";
-  ctx.fillText("Score: " + playerScore, cWidth - 100, 20);
+  ctx.fillText("Choice: " + playerScore, cWidth - 100, 20);
 
   ctx.font = "18px Helvetica";
   ctx.textAlign = "center";
