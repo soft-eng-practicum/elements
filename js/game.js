@@ -33,6 +33,7 @@ var playerScore = 0;
 var playerChoice = 0;
 
 var questions = [];
+var currQuestion;
 
 var totalQuestions = 20;
 var totalAnswers = 80;
@@ -42,6 +43,8 @@ var previousArrow;
 var answers = [];
 
 var question1 = "Do you like Chemistry?";
+var question2 = "Are you having Fun?";
+var question3 = "Did you have a great weekend?";
 
 var music;
 
@@ -70,7 +73,8 @@ cHeight = canvas.height;
 var gravity = 0.4;
 var groundPoint = cHeight - (cHeight/4);
 
-// drawnBack and firedArrow booleans to assert state of currArrow
+// These two variables here tells you if the bullet on the dial is getting ready
+//to be released
 var drawnBack = false;
 var firedArrow = false;
 
@@ -206,9 +210,25 @@ function collisionCheck() {
 
        }
 
-function answerCheck{
+function checkAnswer(){
 
-  
+  switch (playerChoice) {
+  case "A":
+        playerScore = 1;
+      break;
+  case "B":
+        playerScore = 0;
+      break;
+  case "C":
+        playerScore = 0;
+      break;
+  case "D":
+        playerScore = 0;
+      break;
+  default:
+         playerScore = 0;
+}
+
 }
 
 
@@ -334,8 +354,8 @@ var writeInfo = function(mousePos) {
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
   ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
   ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
-  ctx.fillText("ArrowX: " + currentArrowCoorX, 20, 80);
-  ctx.fillText("ArrowY: " + currentArrowCoorY, 20, 100);
+  ctx.fillText("CoordX: " + currentArrowCoorX, 20, 80);
+  ctx.fillText("CoordY: " + currentArrowCoorY, 20, 100);
 
 
 
@@ -429,7 +449,9 @@ if(arrows.length > 1){
 }
 
 collisionCheck();
-//currentArrowCoor = arrows.length;
+checkAnswer();
+
+
 //  music = new sound("g.mp3");
 //  music.play();
 
