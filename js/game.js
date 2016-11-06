@@ -164,8 +164,9 @@ function collisionCheck() {
 //      bubble3x;
 //      bubble4x;
 
-       currArrow.x;
-       currArrow.y;
+       if(currentArrowCoorX >= bubble4x && currentArrowCoorX <= bubble4x + 80){
+         playerScore += 1;
+       }
 
 
        }
@@ -373,6 +374,7 @@ if(arrows.length > 1){
   currentArrowCoorY = arrows[1].rightTipCoords.y;
 }
 
+collisionCheck();
 //currentArrowCoor = arrows.length;
 //  music = new sound("g.mp3");
 //  music.play();
