@@ -232,48 +232,6 @@ input:focus,
     padding-bottom: 1em;
 }
 
-/* Footer styles */
 
-#footer {
-    color: #fff;
-    background-color: #121212;
-    
-}
-
-/* Media queries */
-
-@media screen and (max-width: 150em) {
-    .header-title {
-        font-size: 10vmin;
-    }
-}
-
-@media screen and (max-width: 120em) {
-    .header-title {
-        font-size: 10vmin;
-    }
-}
-
-@media screen and (max-width: 105em) {
-    .header-title {
-        font-size: 10vmin;
-    }
-}
-
-@media screen and (max-width: 85.375em) {
-    .header-title {
-        font-size: 14vmin;
-    }
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
-    .navbar-default .navbar-toggle {
-        margin-right: 12em;
-    }
-    #header {
-        padding-bottom: 16.5em;
-    }
-    .header-title {
-        font-size: 11vmin;
     }
 }
