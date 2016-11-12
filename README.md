@@ -1,6 +1,6 @@
 README FILE
 
-                                                   Team name:
+                                                   Team Name:
                                                   **Elements**
 
 **Repo location URL**
