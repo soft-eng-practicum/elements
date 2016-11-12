@@ -39,13 +39,13 @@ var totalQuestions = 20;
 var previousArrow;
 
 var answers = [];
-
+//questions section
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
 var question3 = "Did you have a great weekend?";
 
 var music;
-
+//varible of muliple choice questions
 var answerA = "A: Yes";
 var answerB = "B: No";
 var answerC = "C: Maybe";
