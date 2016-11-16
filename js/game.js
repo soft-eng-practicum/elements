@@ -453,7 +453,12 @@ var writeInfo = function(mousePos) {
   ctx.textBaseline = "top";
   ctx.fillText("Score: " + playerScore, cWidth - 100, 60);
 
-  ctx.font = "25px Helvetica";
+  ctx.font = "15px Helvetica";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+  ctx.fillText(qa[currQuestion], cWidth/2, 40);
+  
+   ctx.font = "25px Helvetica";
   ctx.textAlign = "right";
   ctx.textBaseline = "top";
   ctx.fillText("Current Answer: " + answers[currAnswer], cWidth - 100, 100);
@@ -469,6 +474,8 @@ var writeInfo = function(mousePos) {
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
   ctx.fillText(questions[currQuestion], cWidth/2, 20);
+  
+  
 
 
     ctx.font = "12px Helvetica";
