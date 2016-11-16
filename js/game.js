@@ -49,9 +49,12 @@ questions[2] = 'What is the second largest country (in size) in the world?';
 
 var currQuestion = 0;
 var currAnswer = 0;
+var currQa = 0;
+
 
 var totalQuestions = 20;
 var totalAnswers = 80;
+var totalQa = 20;
 
 var previousArrow;
 
