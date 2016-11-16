@@ -14,6 +14,8 @@ character2.src = "Images/gun.png";
 
 var rotatedCoordinates = 0;
 
+var timer = 0;
+
 var currentArrowCoorX = 0;
 var currentArrowCoorY = 0;
 
@@ -32,15 +34,31 @@ var theAngle = 0;
 var playerScore = 0;
 var playerChoice = 0;
 
-var questions = [];
-var currQuestion;
+var choiceA;
+var choiceB;
+var choiceC;
+var choiceD;
+
+var score = 0;
+
+
+var questions = new Array();
+questions[0] = 'Is there a difference between a jungle and a rain forest?'
+questions[1] = 'What is the world\'s most common religion?',
+questions[2] = 'What is the second largest country (in size) in the world?';
+
+var currQuestion = 0;
+var currAnswer = 0;
 
 var totalQuestions = 20;
 var totalAnswers = 80;
 
 var previousArrow;
 
-var answers = [];
+var answers = new Array();
+answers[0] = "A";
+answers[1] = "B";
+answers[2] = "C";
 
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
@@ -214,22 +232,65 @@ function checkAnswer(){
 
   switch (playerChoice) {
   case "A":
-        playerScore = 1;
+        timer++;
+        if(timer > 100){
+            timer = 0;
+            playerChoice = 0;
+            currQuestion += 1;
+            if(answers[currAnswer] === "A"){
+              playerScore += 1;
+            }
+              currAnswer += 1;
+        }
       break;
   case "B":
-        playerScore = 0;
+        timer++;
+        if(timer > 100){
+            timer = 0;
+            playerChoice = 0;
+            currQuestion += 1;
+            if(answers[currAnswer] === "B"){
+              playerScore += 1;
+            }
+              currAnswer += 1;
+        }
       break;
   case "C":
-        playerScore = 0;
+        timer++;
+        if(timer > 100){
+             timer = 0;
+             playerChoice = 0;
+             currQuestion += 1;
+             if(answers[currAnswer] === "C"){
+               playerScore += 1;
+             }
+             currAnswer += 1;
+        }
       break;
   case "D":
-        playerScore = 0;
+        timer++;
+        if(timer > 100){
+            timer = 0;
+            playerChoice= 0;
+            currQuestion += 1;
+            if(answers[currAnswer] === "D"){
+              playerScore += 1;
+            }
+            currAnswer += 1;
+        }
       break;
   default:
-         playerScore = 0;
+      //   playerScore = 0;
 }
 
 }
+
+function grade(){
+
+    i
+
+}
+
 
 
 var drawScene = function() {
@@ -367,13 +428,44 @@ var writeInfo = function(mousePos) {
   ctx.font = "25px Helvetica";
   ctx.textAlign = "right";
   ctx.textBaseline = "top";
+  ctx.fillText("A", bubble2x + 50, 120);
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText("B", bubblex + 50, 220);
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText("C", bubble3x + 50, 320);
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText("D", bubble4x + 50, 420);
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
   ctx.fillText("Score: " + playerScore, cWidth - 100, 60);
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText("Current Answer: " + answers[currAnswer], cWidth - 100, 100);
+
+
+  ctx.font = "25px Helvetica";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText("Timer: " + timer, cWidth - 100, 140);
 
 
   ctx.font = "18px Helvetica";
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
-  ctx.fillText(question1, cWidth/2, 20);
+  ctx.fillText(questions[currQuestion], cWidth/2, 20);
 
 
     ctx.font = "12px Helvetica";
