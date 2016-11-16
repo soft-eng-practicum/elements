@@ -69,10 +69,10 @@ var question3 = "Did you have a great weekend?";
 
 var music;
 
-var answerA = "A: Yes";
-var answerB = "B: No";
-var answerC = "C: Maybe";
-var answerD = "D: Perhaps"
+var answerA = "";
+var answerB = "";
+var answerC = "";
+var answerD = ""
 
 //canvas.width=window.innerWidth - 15;
 //canvas.height=window.innerHeight - 15;
