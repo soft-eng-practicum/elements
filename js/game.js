@@ -41,7 +41,7 @@ var choiceD;
 
 var score = 0;
 
-
+//add your qestions here
 var questions = new Array();
 questions[0] = 'What is the correct balanced formula for Potassium Chloride?' ;
 questions[1] = 'What is the correct balanced formula for Sodium Bromide?';
@@ -69,7 +69,7 @@ var previousArrow;
 
 
 
-
+// questions answers here
 var answers = new Array();
 answers[0] = "D" ;
 answers[1] = "C";
@@ -82,6 +82,7 @@ answers[7] = "D";
 answers[8] = "C";
 answers[9] = "B";
 
+//multiple choices question here
 var qa = new Array();
 qa[0] = "a= PCl b= K2Cl2 c= K2Cl d= KCl" ;
 qa[1] = "a= NBr3 b= NBr c= NaBr d= NBr2";
@@ -98,7 +99,7 @@ qa[9] = "a= NH4NO2 b= NH4NO3 c= NO3NH4 d= NH4NO";
 
 
                                                 
-
+//ignore this section for now
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
 var question3 = "Did you have a great weekend?";
