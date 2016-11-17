@@ -78,6 +78,19 @@ answers[7] = "D";
 answers[8] = "C";
 answers[9] = "B";
 
+var qa = new Array();
+qa[0] = "a= PCl b= K2Cl2 c= K2Cl d= KCl" ;
+qa[1] = "a= NBr3 b= NBr c= NaBr d= NBr2";
+qa[2] = "a= SI b= NaI c= IS d= NaIO3";
+qa[3] = "a= Na2O b= NaO c= SO2 d= SO";
+qa[4] = "a= Ka2O b= P2O c= KaO d= K2O";
+qa[5] = "a= MnO b= MO2 c= MgO d= MgO2";
+qa[6] = "a= CuCl b= ClCu c= CoCl d= CoCl2";
+qa[7] = "a= CuCl2 b= ClCu c= CrCl2 d= KuCl";
+qa[8] = "a= MgI5 b= MnI5 c= MI5 d= MnBr";
+qa[9] = "a= NH4NO2 b= NH4NO3 c= NO3NH4 d= NH4NO";
+
+
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
 var question3 = "Did you have a great weekend?";
