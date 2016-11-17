@@ -67,9 +67,16 @@ var totalQa = 20;
 var previousArrow;
 
 var answers = new Array();
-answers[0] = "A";
-answers[1] = "B";
-answers[2] = "C";
+answers[0] = "D" ;
+answers[1] = "C";
+answers[2] = "B";
+answers[3] = "A";
+answers[4] = "D";
+answers[5] = "C";
+answers[6] = "A";
+answers[7] = "D";
+answers[8] = "C";
+answers[9] = "B";
 
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
