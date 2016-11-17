@@ -41,11 +41,19 @@ var choiceD;
 
 var score = 0;
 
-
 var questions = new Array();
-questions[0] = 'Is there a difference between a jungle and a rain forest?'
-questions[1] = 'What is the world\'s most common religion?',
-questions[2] = 'What is the second largest country (in size) in the world?';
+questions[0] = 'What is the correct balanced formula for Potassium Chloride?' ;
+questions[1] = 'What is the correct balanced formula for Sodium Bromide?';
+questions[2] = 'What is the correct balanced formula for Sodium Iodide?';
+questions[3] = 'What is the correct balanced formula for Sodium Oxide?';
+questions[4] = 'What is the correct balanced formula for Potassium Oxide?';
+questions[5] = 'What is the correct balanced formula for Magnesium Oxide?';
+questions[6] = 'What is the correct balanced formula for Copper (I) chloride?';
+questions[7] = 'What is the correct balanced formula for Copper (II) chloride?';
+questions[8] = 'What is the correct balanced formula for Maganese (V) bromide?';
+questions[9] = 'What is the correct balanced formula for Ammonium Nitrate?';
+
+
 
 var currQuestion = 0;
 var currAnswer = 0;
