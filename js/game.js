@@ -41,6 +41,7 @@ var choiceD;
 
 var score = 0;
 
+
 var questions = new Array();
 questions[0] = 'What is the correct balanced formula for Potassium Chloride?' ;
 questions[1] = 'What is the correct balanced formula for Sodium Bromide?';
@@ -55,16 +56,19 @@ questions[9] = 'What is the correct balanced formula for Ammonium Nitrate?';
 
 
 
+
 var currQuestion = 0;
 var currAnswer = 0;
 var currQa = 0;
-
 
 var totalQuestions = 20;
 var totalAnswers = 80;
 var totalQa = 20;
 
 var previousArrow;
+
+
+
 
 var answers = new Array();
 answers[0] = "D" ;
@@ -90,6 +94,10 @@ qa[7] = "a= CuCl2 b= ClCu c= CrCl2 d= KuCl";
 qa[8] = "a= MgI5 b= MnI5 c= MI5 d= MnBr";
 qa[9] = "a= NH4NO2 b= NH4NO3 c= NO3NH4 d= NH4NO";
 
+
+
+
+                                                
 
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
@@ -350,7 +358,7 @@ var drawScene = function() {
  //ctx.rotate(180);
  ctx.drawImage(character, 550, groundPoint - 80, 80, 80);
 // drawRotatedImage(character, 550, groundPoint - 80, angle);
-drawRotatedImage(character2, 150, 150, theAngle);
+//drawRotatedImage(character2, 150, 150, theAngle);
 
 
 }
@@ -571,7 +579,7 @@ var update = function() {
       direction4 = 1;
     }
 
- theAngle += rotatedCoordinates;
+ //theAngle += rotatedCoordinates;
 
 if(arrows.length > 1){
   currentArrowCoorX = arrows[1].rightTipCoords.x;
