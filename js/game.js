@@ -8,22 +8,33 @@ var canvas = document.createElement("canvas");
 canvas.id = 'canvas';
 var ctx = canvas.getContext("2d");
 
+var isHit = false; 
 
 var character2 = new Image();
 character2.src = "Images/gun.png";
 
 var rotatedCoordinates = 0;
 
-var timer = 0;
+//var timer = 0;
 
+//declared and initialized a count variable for timer
+//count starts a 60 seconds and counts down
+var count = 60, timer = setInterval(function() {
+    $("#counter").html(count--);
+    if(count == 0) clearInterval(timer);
+}, 1000);
+
+//Setting arrow coordinates for X and Y
 var currentArrowCoorX = 0;
 var currentArrowCoorY = 0;
 
+//declaring and initializing coordinate for bubbles
 var bubblex = 200;
 var bubble2x = 250;
 var bubble3x = 300;
 var bubble4x = 350;
 
+//declaring and initializing direction
 var direction = 1;
 var direction2 = 1;
 var direction3 = 1;
@@ -31,17 +42,22 @@ var direction4 = 1;
 var TO_RADIANS = Math.PI/180;
 var theAngle = 0;
 
+//declared and intialized player score to hold an int
+//player score starts at 0
 var playerScore = 0;
-var playerChoice = 0;
+//declared and initialized player choice as a String
+var playerChoice = "";
 
+//Declared choice variables
 var choiceA;
 var choiceB;
 var choiceC;
 var choiceD;
 
+//declared score and initialized to 0
 var score = 0;
 
-//add your qestions here
+//Declared and intialized an array of questions
 var questions = new Array();
 questions[0] = 'What is the correct balanced formula for Potassium Chloride?' ;
 questions[1] = 'What is the correct balanced formula for Sodium Bromide?';
@@ -54,13 +70,12 @@ questions[7] = 'What is the correct balanced formula for Copper (II) chloride?';
 questions[8] = 'What is the correct balanced formula for Maganese (V) bromide?';
 questions[9] = 'What is the correct balanced formula for Ammonium Nitrate?';
 
-
-
-
+//declared variables for questions and set default values
 var currQuestion = 0;
 var currAnswer = 0;
 var currQa = 0;
 
+//Declared variable for total amount of questions and set default values
 var totalQuestions = 20;
 var totalAnswers = 80;
 var totalQa = 20;
@@ -69,7 +84,7 @@ var previousArrow;
 
 
 
-// questions answers here
+//Declared and intialized an answers array to hold correct answer choices
 var answers = new Array();
 answers[0] = "D" ;
 answers[1] = "C";
@@ -82,7 +97,7 @@ answers[7] = "D";
 answers[8] = "C";
 answers[9] = "B";
 
-//multiple choices question here
+//Declared and intialized an array to display answer choices to the user
 var qa = new Array();
 qa[0] = "a= PCl b= K2Cl2 c= K2Cl d= KCl" ;
 qa[1] = "a= NBr3 b= NBr c= NaBr d= NBr2";
@@ -96,16 +111,15 @@ qa[8] = "a= MgI5 b= MnI5 c= MI5 d= MnBr";
 qa[9] = "a= NH4NO2 b= NH4NO3 c= NO3NH4 d= NH4NO";
 
 
-
-
-                                                
-//ignore this section for now
+//Declared and initialized sample questions 
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
 var question3 = "Did you have a great weekend?";
 
+//Declared variable to hold music 
 var music;
 
+//Declared and initiliazed sample answers for sample questions
 var answerA = "";
 var answerB = "";
 var answerC = "";
@@ -122,12 +136,8 @@ document.body.appendChild(canvas);
 cWidth = canvas.width;
 cHeight = canvas.height;
 
-
-
-
-
-// The gravity is what pulls the bullets down to the ground
-
+//Declared and initiliazed gravity
+//The gravity is what pulls the bullets down to the ground
 var gravity = 0.4;
 var groundPoint = cHeight - (cHeight/4);
 
@@ -143,7 +153,6 @@ var distBetween = function(p1, p2) {
 }
 
 //This function is to be used with the event handlers to shoot bullets
-
 var isInCircle = function(mousePos) {
   var distFromCenter = distBetween(drawBackCirc, mousePos);
   if (distFromCenter < drawBackCirc.r) return true;
@@ -159,7 +168,6 @@ function getMousePos(canvas, evt) {
 }
 
 //The event listeners are listed below to show what the user is doing
-
 var mousePos;
 var mouseDown = false;
 var mouseUp = false;
@@ -184,8 +192,6 @@ addEventListener("mousedown", function(evt) {
 //       addQuestion;
   //  }
 //}
-
-
 
 
 addEventListener("mouseup", function(evt) {
@@ -235,14 +241,21 @@ function collisionCheck() {
 
        if(currentArrowCoorX >= bubble4x && currentArrowCoorX <= bubble4x + 80){
            if(currentArrowCoorY >= 400 && currentArrowCoorY <= 480){
-              playerChoice = "D";
+              if(!isHit)
+              {
+                  playerChoice = "D";
+              }
+               
            }
 
        }
 
        if(currentArrowCoorX >= bubblex && currentArrowCoorX <= bubblex + 80){
         if(currentArrowCoorY >= 200 && currentArrowCoorY <= 280){
-            playerChoice = "B";
+            if(!isHit)
+              {
+                  playerChoice = "B";
+              }
          }
 
       //   playerScore++;
@@ -250,7 +263,10 @@ function collisionCheck() {
 
        if(currentArrowCoorX >= bubble2x && currentArrowCoorX <= bubble2x + 80){
          if(currentArrowCoorY >= 100 && currentArrowCoorY <= 180){
-           playerChoice = "A";
+             if(!isHit)
+              {
+                  playerChoice = "A";
+              }
          }
 
     //     playerScore++;
@@ -259,7 +275,10 @@ function collisionCheck() {
        if(currentArrowCoorX >= bubble3x && currentArrowCoorX <= bubble3x + 80){
 
          if(currentArrowCoorY >= 300 && currentArrowCoorY <= 380){
-            playerChoice = "C";
+             if(!isHit)
+              {
+                  playerChoice = "C";
+              }
         }
 
     //     playerScore++;
@@ -268,56 +287,95 @@ function collisionCheck() {
 
        }
 
+//Functions check to see the timer has hit 0 and notifies the user
+function checkCount()
+{
+    if(count <= 0)
+        {
+            playerChoice = "Time's up!"
+        }
+}
+
+//Function to check the user's answer and changes to next question if the answer is correct
 function checkAnswer(){
 
   switch (playerChoice) {
   case "A":
-        timer++;
-        if(timer > 100){
-            timer = 0;
-            playerChoice = 0;
-            currQuestion += 1;
+      //  timer++;
+      if(count > 0){
+            //timer = 0;
+            playerChoice = "A";
+            
             if(answers[currAnswer] === "A"){
               playerScore += 1;
-            }
+              currQuestion += 1;
               currAnswer += 1;
-        }
+
+            }
+          else
+              {
+                  playerChoice = "Fail!"
+              }
+          
+              
+       }
+        
       break;
   case "B":
-        timer++;
-        if(timer > 100){
-            timer = 0;
-            playerChoice = 0;
-            currQuestion += 1;
+       // timer++;
+        if(count > 0){
+            playerChoice = "B";
             if(answers[currAnswer] === "B"){
               playerScore += 1;
-            }
+              currQuestion += 1;
               currAnswer += 1;
+
+            }
+           else
+              {
+                  playerChoice = "Fail!"
+              }
+              
         }
+         
       break;
   case "C":
-        timer++;
-        if(timer > 100){
-             timer = 0;
-             playerChoice = 0;
-             currQuestion += 1;
+    //    timer++;
+    if(count > 0){
+             //timer = 0;
+             playerChoice = "C";
              if(answers[currAnswer] === "C"){
                playerScore += 1;
+               currQuestion += 1;
+               currAnswer += 1;
+
              }
-             currAnswer += 1;
-        }
+           else
+              {
+                  playerChoice = "Fail!"
+              }
+             
+      }
+        
       break;
   case "D":
-        timer++;
-        if(timer > 100){
-            timer = 0;
-            playerChoice= 0;
-            currQuestion += 1;
+        //timer++;
+    if(count > 0){
+          //  timer = 0;
+            playerChoice= "0";
+            
             if(answers[currAnswer] === "D"){
               playerScore += 1;
+              currQuestion += 1;
+              currAnswer += 1;
             }
-            currAnswer += 1;
-        }
+           else
+              {
+                  playerChoice = "Fail!"
+              }
+            
+       }
+         
       break;
   default:
       //   playerScore = 0;
@@ -334,9 +392,9 @@ function grade(){
 
 
 var drawScene = function() {
-  // increased groundPoint so arrows stick where they should in the ground
-//  var ground = groundPoint + 15;
-  // background Image
+  //Increased groundPoint so arrows stick where they should in the ground
+  //var ground = groundPoint + 15;
+  //Background Image
 
   var background = new Image();
   background.src = "Images/background2.jpg";
@@ -421,18 +479,12 @@ var drawCircles = function() {
   drawAimer();
 }
 
-
-
 var isFiredArrow = function() {
   if (mousePos && drawnBack && mouseUp) {
     drawnBack = false;
     firedArrow = true;
   }
 }
-
-
-
-
 
 var isDrawnBack = function() {
   if (mousePos && isInCircle(mousePos)) {
@@ -452,65 +504,67 @@ var writeInfo = function(mousePos) {
   } else {
     ctx.fillStyle = "black";
   }
+  
+/*
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
   ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
   ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
   ctx.fillText("CoordX: " + currentArrowCoorX, 20, 80);
   ctx.fillText("CoordY: " + currentArrowCoorY, 20, 100);
+*/
 
 
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("Choice: " + playerChoice, cWidth - 100, 20);
 
-  ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("Choice: " + playerChoice, cWidth - 100, 20);
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("A", bubble2x + 50, 120);
 
-  ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("A", bubble2x + 50, 120);
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("B", bubblex + 50, 220);
 
-  ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("B", bubblex + 50, 220);
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("C", bubble3x + 50, 320);
 
-  ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("C", bubble3x + 50, 320);
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("D", bubble4x + 50, 420);
 
-  ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("D", bubble4x + 50, 420);
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("Score: " + playerScore, cWidth - 100, 60);
 
-  ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("Score: " + playerScore, cWidth - 100, 60);
-
-  ctx.font = "15px Helvetica";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "top";
-  ctx.fillText(qa[currQuestion], cWidth/2, 40);
+    ctx.font = "15px Helvetica";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    ctx.fillText(qa[currQuestion], cWidth/2, 40);
   
-   ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("Current Answer: " + answers[currAnswer], cWidth - 100, 100);
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    //ctx.fillText("Current Answer: " + answers[currAnswer], cWidth - 100, 100);
 
 
-  ctx.font = "25px Helvetica";
-  ctx.textAlign = "right";
-  ctx.textBaseline = "top";
-  ctx.fillText("Timer: " + timer, cWidth - 100, 140);
+    ctx.font = "25px Helvetica";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("Timer: " + count, cWidth - 100, 100);
 
 
-  ctx.font = "18px Helvetica";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "top";
-  ctx.fillText(questions[currQuestion], cWidth/2, 20);
+    ctx.font = "18px Helvetica";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    ctx.fillText(questions[currQuestion], cWidth/2, 20);
   
   
 
@@ -587,8 +641,10 @@ if(arrows.length > 1){
   currentArrowCoorY = arrows[1].rightTipCoords.y;
 }
 
+checkCount();
 collisionCheck();
 checkAnswer();
+
 
 
 //  music = new sound("g.mp3");
