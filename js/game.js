@@ -1,4 +1,4 @@
-//October 10, 2016
+//November 26, 2016
 //Software Development 2 GGC
 //Chemistry Game
 //The code to create the canvas is written below
@@ -19,7 +19,7 @@ var rotatedCoordinates = 0;
 
 //declared and initialized a count variable for timer
 //count starts a 60 seconds and counts down
-var count = 60, timer = setInterval(function() {
+var count = 10, timer = setInterval(function() {
     $("#counter").html(count--);
     if(count == 0) clearInterval(timer);
 }, 1000);
@@ -407,7 +407,7 @@ var drawScene = function() {
   var bubble4 = new Image();
   bubble4.src = "Images/bubble.png";
   var character = new Image();
-  character.src = "Images/gun.png";
+  character.src = "Images/gunesdvedf.png";
 
  ctx.drawImage(background,0,0,1280,600);
  ctx.drawImage(bubble1, bubblex,200,80,80);
@@ -517,7 +517,7 @@ var writeInfo = function(mousePos) {
     ctx.font = "25px Helvetica";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
-    ctx.fillText("Choice: " + playerChoice, cWidth - 100, 20);
+    //ctx.fillText("Choice: " + playerChoice, cWidth - 100, 20);
 
     ctx.font = "25px Helvetica";
     ctx.textAlign = "right";
