@@ -19,7 +19,7 @@ var rotatedCoordinates = 0;
 
 //declared and initialized a count variable for timer
 //count starts a 60 seconds and counts down
-var count = 10, timer = setInterval(function() {
+var count = 60, timer = setInterval(function() {
     $("#counter").html(count--);
     if(count == 0) clearInterval(timer);
 }, 1000);
