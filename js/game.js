@@ -70,6 +70,20 @@ questions[7] = 'What is the correct balanced formula for Copper (II) chloride?';
 questions[8] = 'What is the correct balanced formula for Maganese (V) bromide?';
 questions[9] = 'What is the correct balanced formula for Ammonium Nitrate?';
 
+//Really hard problems
+questions[10] = 'What is the correct balanced formula for Sodium Peroxide?' ;
+questions[11] = 'What is the correct balanced formula for Potassium perchlorate?';
+questions[12] = 'What is the correct balanced formula for Sodium Hydrogen Phosphate';
+questions[13] = 'What is the correct balanced formula for Potassium hydrogen sulfite';
+
+//Covalent bond questions
+questions[14] = 'What is the correct balanced formula for Carbon monoxide?';
+questions[15] = 'What is the correct balanced formula for Nitrogen Dioxide?';
+questions[16] = 'What is the correct balanced formula for Sulfur Trioxide?';
+questions[17] = 'What is the correct balanced formula for Phosphorus Pentachloride?';
+questions[18] = 'What is the correct balanced formula for Dinitrogen Tetraoxide?';
+
+
 //declared variables for questions and set default values
 var currQuestion = 0;
 var currAnswer = 0;
@@ -97,6 +111,23 @@ answers[7] = "D";
 answers[8] = "C";
 answers[9] = "B";
 
+//Answers for really hard questions
+answers[10] = "A" ;
+answers[11] = "B";
+answers[12] = "C";
+answers[13] = "B";
+
+//Answers for covalent molecule questions
+answers[14] = "D";
+answers[15] = "C";
+answers[16] = "A";
+answers[17] = "D";
+answers[18] = "C";
+
+
+
+
+
 //Declared and intialized an array to display answer choices to the user
 var qa = new Array();
 qa[0] = "a= PCl b= K2Cl2 c= K2Cl d= KCl" ;
@@ -109,6 +140,21 @@ qa[6] = "a= CuCl b= ClCu c= CoCl d= CoCl2";
 qa[7] = "a= CuCl2 b= ClCu c= CrCl2 d= KuCl";
 qa[8] = "a= MgI5 b= MnI5 c= MI5 d= MnBr";
 qa[9] = "a= NH4NO2 b= NH4NO3 c= NO3NH4 d= NH4NO";
+
+//Choices for really hard questions
+qa[10] = "a= Na2O2 b= NaO c= NaO2 d= NO2," ;
+qa[11] = "a= KClO3 b= KClO4 c= KClO2 d= KClO";
+qa[12] = "a= SI b= NaI c= NaHPO4 d= NaIO3";
+qa[13] = "a= Na2O b= KHSO3 c= SO2 d= SO";
+
+//Choices for covalent molecule questions
+qa[14] = "a= NO b= N2O4 c= NO2 d= NO3";
+qa[15] = "a= MnO b= MO2 c= MgO d= MgO2";
+qa[16] = "a= SO3 b= SO2 c= S2O3 d= S2O2";
+qa[17] = "a= P5Cl5 b= P2Cl3 c= PBr5 d= PCl5";
+qa[18] = "a= NO4 b= N4O2 c= N2O4 d= Ni2O4";
+
+
 
 
 //Declared and initialized sample questions
