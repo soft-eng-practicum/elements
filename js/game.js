@@ -8,7 +8,7 @@ var canvas = document.createElement("canvas");
 canvas.id = 'canvas';
 var ctx = canvas.getContext("2d");
 
-var isHit = false; 
+var isHit = false;
 
 var character2 = new Image();
 character2.src = "Images/gun.png";
@@ -111,12 +111,12 @@ qa[8] = "a= MgI5 b= MnI5 c= MI5 d= MnBr";
 qa[9] = "a= NH4NO2 b= NH4NO3 c= NO3NH4 d= NH4NO";
 
 
-//Declared and initialized sample questions 
+//Declared and initialized sample questions
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
 var question3 = "Did you have a great weekend?";
 
-//Declared variable to hold music 
+//Declared variable to hold music
 var music;
 
 //Declared and initiliazed sample answers for sample questions
@@ -245,7 +245,7 @@ function collisionCheck() {
               {
                   playerChoice = "D";
               }
-               
+
            }
 
        }
@@ -305,7 +305,7 @@ function checkAnswer(){
       if(count > 0){
             //timer = 0;
             playerChoice = "A";
-            
+
             if(answers[currAnswer] === "A"){
               playerScore += 1;
               currQuestion += 1;
@@ -316,10 +316,10 @@ function checkAnswer(){
               {
                   playerChoice = "Fail!"
               }
-          
-              
+
+
        }
-        
+
       break;
   case "B":
        // timer++;
@@ -335,9 +335,9 @@ function checkAnswer(){
               {
                   playerChoice = "Fail!"
               }
-              
+
         }
-         
+
       break;
   case "C":
     //    timer++;
@@ -354,16 +354,16 @@ function checkAnswer(){
               {
                   playerChoice = "Fail!"
               }
-             
+
       }
-        
+
       break;
   case "D":
         //timer++;
     if(count > 0){
           //  timer = 0;
             playerChoice= "0";
-            
+
             if(answers[currAnswer] === "D"){
               playerScore += 1;
               currQuestion += 1;
@@ -373,9 +373,9 @@ function checkAnswer(){
               {
                   playerChoice = "Fail!"
               }
-            
+
        }
-         
+
       break;
   default:
       //   playerScore = 0;
@@ -397,15 +397,15 @@ var drawScene = function() {
   //Background Image
 
   var background = new Image();
-  background.src = "Images/background2.jpg";
+  background.src = "Images/game bg.jpg";
   var bubble1 = new Image();
-  bubble1.src = "Images/bubble.png";
+  bubble1.src = "Images/new bubble.png";
   var bubble2 = new Image();
-  bubble2.src = "Images/bubble.png";
+  bubble2.src = "Images/new bubble.png";
   var bubble3 = new Image();
-  bubble3.src = "Images/bubble.png";
+  bubble3.src = "Images/new bubble.png";
   var bubble4 = new Image();
-  bubble4.src = "Images/bubble.png";
+  bubble4.src = "Images/new bubble.png";
   var character = new Image();
   character.src = "Images/gunesdvedf.png";
 
@@ -504,7 +504,7 @@ var writeInfo = function(mousePos) {
   } else {
     ctx.fillStyle = "black";
   }
-  
+
 /*
   ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
   ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
@@ -548,7 +548,7 @@ var writeInfo = function(mousePos) {
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
     ctx.fillText(qa[currQuestion], cWidth/2, 40);
-  
+
     ctx.font = "25px Helvetica";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
@@ -565,8 +565,8 @@ var writeInfo = function(mousePos) {
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
     ctx.fillText(questions[currQuestion], cWidth/2, 20);
-  
-  
+
+
 
 
     ctx.font = "12px Helvetica";
