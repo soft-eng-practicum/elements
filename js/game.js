@@ -365,11 +365,8 @@ function checkAnswer(){
 
 }
 
-
+//This function is Used to draw all the images, the background and the entire game
 var drawScene = function() {
-  //Increased groundPoint so arrows stick where they should in the ground
-  //var ground = groundPoint + 15;
-  //Background Image
 
   var background = new Image();
   background.src = "Images/game bg.jpg";
