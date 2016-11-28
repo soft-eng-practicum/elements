@@ -13,7 +13,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/angular/angular.min.js',
-      'public/javascripts/*.js',
+      'web/js/bullet.js',
+	  'web/js/game.js',
       'tests/*.js'
     ],
 
