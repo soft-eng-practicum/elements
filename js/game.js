@@ -156,8 +156,8 @@ var answerC = "";
 var answerD = ""
 
 //The variables canvas width and height can be used to always keep track of our drawing area
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 document.body.appendChild(canvas);
 
@@ -174,7 +174,7 @@ var groundPoint = cHeight - (cHeight/4);
 var drawnBack = false;
 var firedArrow = false;
 
-
+//This function calculates the distance between two points
 var distBetween = function(p1, p2) {
   return Math.sqrt( Math.pow((p2.x-p1.x), 2)
                   + Math.pow((p2.y-p1.y), 2) );
@@ -187,6 +187,7 @@ var isInCircle = function(mousePos) {
   else return false;
 }
 
+//This function returns the current mouse position
 function getMousePos(canvas, evt) {
   var rect = canvas.getBoundingClientRect();
   return {
