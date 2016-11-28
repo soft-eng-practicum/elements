@@ -585,87 +585,73 @@ var isDrawnBack = function() {
 //Information written to the client is handled by this function
 
 var writeInfo = function(mousePos) {
-  ctx.font = "13px Helvetica";
+  ctx.font = "13px Comic Sans MS";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
   if(isInCircle(mousePos) && mouseDown) {
     ctx.fillStyle = "blue";
   } else {
     ctx.fillStyle = "black";
+    
   }
 
-/*
-  ctx.fillText("Mouse Position: " + mousePos.x + ", " + mousePos.y, 20, 20);
-  ctx.fillText("Circle Position: " + shootingCirc.x + ", " + shootingCirc.y, 20, 40);
-  ctx.fillText("Angle: " + angleBetween(mousePos, shootingCirc), 20, 60);
-  ctx.fillText("CoordX: " + currentArrowCoorX, 20, 80);
-  ctx.fillText("CoordY: " + currentArrowCoorY, 20, 100);
-*/
-
-
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
-    ctx.fillText("Choice: " + playerChoice, cWidth - 100, 20);
+    ctx.fillStyle = "3062D9";
 
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
     ctx.fillText("A", bubble2x + 50, 120);
+    
 
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
     ctx.fillText("B", bubblex + 50, 220);
 
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
     ctx.fillText("C", bubble3x + 50, 320);
 
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
     ctx.fillText("D", bubble4x + 50, 420);
 
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
     ctx.fillText("Score: " + playerScore, cWidth - 100, 60);
 
-    ctx.font = "15px Helvetica";
+    ctx.font = "15px Comic Sans MS";
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
     ctx.fillText(qa[currQuestion], cWidth/2, 40);
 
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
-    //ctx.fillText("Current Answer: " + answers[currAnswer], cWidth - 100, 100);
 
-
-    ctx.font = "25px Helvetica";
+    ctx.font = "25px Comic Sans MS";
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
     ctx.fillText("Timer: " + count, cWidth - 100, 100);
 
-
-    ctx.font = "18px Helvetica";
+    ctx.font = "18px Comic Sans MS";
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
     ctx.fillText(questions[currQuestion], cWidth/2, 20);
 
-
-
-
-    ctx.font = "12px Helvetica";
+    ctx.font = "12px Comic Sans MS";
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
     ctx.fillText(answerA + " " + answerB + " " + answerC + " " + answerD, cWidth/2, 60);
 
-
-
 }
+
 
 //Every game engine needs an update function to display to the user the coordinates
 
