@@ -285,7 +285,7 @@ function gameEnd(){
     if(count <= 0)
       {
        window.stop();
-       alert("GAME OVER. To exit press the back aroow or refresh the browser");
+       alert("GAME OVER. To exit refresh browser and click Home to play again just refresh browser");
       }
 }
 
