@@ -153,7 +153,7 @@ var music;
 var answerA = "";
 var answerB = "";
 var answerC = "";
-var answerD = ""
+var answerD = "";
 
 //The variables canvas width and height can be used to always keep track of our drawing area
 canvas.width = window.innerWidth;
@@ -282,6 +282,11 @@ function checkCount()
 //This is the function that ends the game when all the questions are done
 function gameEnd(){
 
+    if(count <= 0)
+      {
+       window.stop();
+       alert("GAME OVER. To exit press the back aroow or refresh the browser");
+      }
 }
 
 //Function to check the user's answer and changes to next question if the answer is correct
@@ -588,6 +593,7 @@ if(arrows.length > 1){
 checkCount();
 collisionCheck();
 checkAnswer();
+gameEnd();
 
 //  music = new sound("g.mp3");
 //  music.play();
