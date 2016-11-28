@@ -244,7 +244,6 @@ function collisionCheck() {
               }
          }
 
-      //   playerScore++;
        }
 
        if(currentArrowCoorX >= bubble2x && currentArrowCoorX <= bubble2x + 80){
@@ -255,7 +254,6 @@ function collisionCheck() {
               }
          }
 
-    //     playerScore++;
        }
 
        if(currentArrowCoorX >= bubble3x && currentArrowCoorX <= bubble3x + 80){
@@ -267,11 +265,10 @@ function collisionCheck() {
               }
         }
 
-    //     playerScore++;
        }
 
 
-       }
+  }
 
 //Functions check to see the timer has hit 0 and notifies the user
 function checkCount()
@@ -287,9 +284,8 @@ function checkAnswer(){
 
   switch (playerChoice) {
   case "A":
-      //  timer++;
+
       if(count > 0){
-            //timer = 0;
             playerChoice = "A";
 
             if(answers[currAnswer] === "A"){
@@ -308,7 +304,7 @@ function checkAnswer(){
 
       break;
   case "B":
-       // timer++;
+
         if(count > 0){
             playerChoice = "B";
             if(answers[currAnswer] === "B"){
@@ -326,9 +322,9 @@ function checkAnswer(){
 
       break;
   case "C":
-    //    timer++;
+
     if(count > 0){
-             //timer = 0;
+
              playerChoice = "C";
              if(answers[currAnswer] === "C"){
                playerScore += 1;
@@ -345,9 +341,9 @@ function checkAnswer(){
 
       break;
   case "D":
-        //timer++;
+
     if(count > 0){
-          //  timer = 0;
+
             playerChoice= "0";
 
             if(answers[currAnswer] === "D"){
@@ -364,17 +360,10 @@ function checkAnswer(){
 
       break;
   default:
-      //   playerScore = 0;
-}
 
 }
 
-function grade(){
-
-    i
-
 }
-
 
 
 var drawScene = function() {
