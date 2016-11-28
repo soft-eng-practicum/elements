@@ -386,11 +386,7 @@ var drawScene = function() {
  ctx.drawImage(bubble2, bubble2x,100,80,80);
  ctx.drawImage(bubble3, bubble3x,300,80,80);
  ctx.drawImage(bubble4, bubble4x,400,80,80);
- //ctx.rotate(180);
  ctx.drawImage(character, 550, groundPoint - 80, 80, 80);
-// drawRotatedImage(character, 550, groundPoint - 80, angle);
-//drawRotatedImage(character2, 150, 150, theAngle);
-
 
 }
 
