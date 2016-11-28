@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', sans-serif;
 }
 
+
 /* Heading titles */
 
 .heading-title {
@@ -21,6 +22,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.head {
+    text-align: center;
+}
 .heading-title-inverse {
     color: #fff;
     letter-spacing: 3px;
@@ -126,13 +130,21 @@ h1, h2, h3, h4, h5, h6 {
 /* Game styles */
 
 #game {
-    background: #ffff;
+    background: #fff;
 }
 
 .game-wrapper {
     padding-top: 20em;
     padding-bottom: 20em;
 }
+
+
+
+.client-wrapper {
+    padding-top: 20em;
+    padding-bottom: 20em;
+}
+
 
 /* About styles */
 
@@ -148,7 +160,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Study Tips styles */
 
 #study {
-    background: #0000;
+    background: #000;
+}
+
+/* Client styles */
+#client {
+    text-align: center;
+    color: #fff;
+    
+    text-align: center;
+    
 }
 
 .study-wrapper {
@@ -195,6 +216,11 @@ h1, h2, h3, h4, h5, h6 {
     transition: 0.3s ease-in-out;
 }
 
+.img-test {
+     width: 10%;
+    height: auto;
+}
+
 /* Contact styles */
 
 .form-control:focus,
@@ -237,7 +263,7 @@ input:focus,
 #footer {
     color: #fff;
     background-color: #121212;
-    
+    text-align: center;
 }
 
 /* Media queries */

@@ -1,6 +1,6 @@
 README FILE
 
-                                                   Team name:
+                                                   Team Name:
                                                   **Elements**
 
 **Repo location URL**
@@ -18,6 +18,10 @@ List of members and their primary roles in project
 2. Winston Kone - *Project Manager and Client Liaison*
 3. Xavier Lazo -  *UI / UX & Lead Documentation*
 4. Hailey Montgomery - *Lead Tester and Data Modeler*
+
+**Game Download Instructions:**
+
+Developers - In order to work on game, you must clone this repository and open the "INSTRUCTIONS.docx" to help you get setup.
 
 
 This work is licensed under a **Creative Commons Attribution - Non Commercial - No Derivatives 4.0 International License.**

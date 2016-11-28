@@ -1,0 +1,24 @@
+
+html, body{
+ height:100%;
+}
+ 
+#page-one {
+  height: 100%;
+  background: url(images/#.jpg) fixed; //"#.jpg" background image//
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-one-block {
+	text-align: center;
+}
+
+.page-one-title {
+    color: #FFF;
+	margin-top: 3em;
+	font-family: 'Architects Daughter', cursive;
+}
+
+
