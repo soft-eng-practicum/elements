@@ -9,6 +9,7 @@ var canvas = document.createElement("canvas");
 canvas.id = 'canvas';
 var ctx = canvas.getContext("2d");
 
+//This variable isHit will tell us if the arrow hit the question or not
 var isHit = false;
 
 //declared and initialized a count variable for timer
@@ -86,7 +87,6 @@ var currQa = 0;
 var totalQuestions = 20;
 var totalAnswers = 80;
 var totalQa = 20;
-
 var previousArrow;
 
 
