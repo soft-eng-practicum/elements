@@ -529,12 +529,10 @@ var update = function() {
   isFiredArrow();
   if (firedArrow) {
     currArrow.fireArrow();
-//    currentArrowCoor = currArrow.x;
     firedArrow = false;
   }
 
   //The drawing area needs to be updated
-
   ctx.clearRect(0,0,cWidth,cHeight);
 
     //this is the code for the first bubble
@@ -578,8 +576,6 @@ var update = function() {
       direction4 = 1;
     }
 
- //theAngle += rotatedCoordinates;
-
 if(arrows.length > 1){
   currentArrowCoorX = arrows[1].rightTipCoords.x;
   currentArrowCoorY = arrows[1].rightTipCoords.y;
@@ -589,40 +585,32 @@ checkCount();
 collisionCheck();
 checkAnswer();
 
-
-
 //  music = new sound("g.mp3");
 //  music.play();
 
 }
 
 //The rendering method draws the entire game
-
 var render = function() {
-  // if(mousePos) writeInfo(mousePos);
+
   drawScene();
   drawCircles();
   for(i=0; i<arrows.length; i++) {
     arrows[i].drawArrow();
-//    currentArrowCoor = arrows[i].arrowTipCoords.x;
   }
 if(mousePos) writeInfo(mousePos);
-//currentArrowCoor = 0;
-drawCircles();
-//drawRotatedImage(character2, 150, 150, 30);
 
+  drawCircles();
 }
 
 //Here is the main function that covers all the other important functions
-
 var main = function() {
+
   update();
   render();
-
   requestAnimationFrame(main);
+
 }
-
-
 
 var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
