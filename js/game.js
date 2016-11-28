@@ -4,6 +4,7 @@
 //The code to create the canvas is written below
 
 
+//Here we have some variables used in the game to draw objects and select images;
 var canvas = document.createElement("canvas");
 canvas.id = 'canvas';
 var ctx = canvas.getContext("2d");
@@ -15,10 +16,9 @@ character2.src = "Images/gun.png";
 
 var rotatedCoordinates = 0;
 
-//var timer = 0;
-
 //declared and initialized a count variable for timer
 //count starts a 60 seconds and counts down
+
 var count = 60, timer = setInterval(function() {
     $("#counter").html(count--);
     if(count == 0) clearInterval(timer);
