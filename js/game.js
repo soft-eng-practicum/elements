@@ -213,44 +213,13 @@ addEventListener("mousedown", function(evt) {
   mouseUp = false;
 }, false);
 
-//We re using this functions to populate an array with questions
-//function fillQuestions(){
-
-  //  for(var i = 0; i < totalQuestions; i++){
-//       addQuestion;
-  //  }
-//}
-
-
+//The mouseUp listener will tell us that we are not shooting at the moment
 addEventListener("mouseup", function(evt) {
   mousePos = getMousePos(canvas, evt);
   mouseUp = true;
   mouseDown = false;
   rotatedCoordinates = Math.PI/2 - angleBetween(mousePos, shootingCirc);
 }, false);
-
-//function drawRotatedImage(image, x, y, angle)
-function drawRotatedImage(image, x, y, angle)
-{
-    // save the current co-ordinate system
-    // before we screw with it
-  //  var angle = Math.PI/2 - angleBetween(mousePos, shootingCirc);
-    ctx.save();
-
-    // move to the middle of where we want to draw our image
-    ctx.translate(x, y);
-
-    // rotate around that point, converting our
-    // angle from degrees to radians
-    ctx.rotate(angle * TO_RADIANS);
-
-    // draw it up and to the left by half the width
-    // and height of the image
-  ctx.drawImage(image, -(image.width/2), -(image.height/2));
-// ctx.drawImage(image, 150, 150, 80, 80);
-    // and restore the co-ords to how they were when we began
-    ctx.restore();
-}
 
 function collisionCheck() {
 
