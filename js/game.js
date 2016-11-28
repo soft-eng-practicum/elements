@@ -201,13 +201,12 @@ var mousePos;
 var mouseDown = false;
 var mouseUp = false;
 
-
+//This function is used to calculate the coordinats of the mouse
 addEventListener("mousemove", function(evt) {
   mousePos = getMousePos(canvas, evt);
 }, false);
 
-
-
+//This function will tell us if the mouse is down in order to shoot at the questions
 addEventListener("mousedown", function(evt) {
   mousePos = getMousePos(canvas, evt);
   mouseDown = true;
