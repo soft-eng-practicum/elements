@@ -1,0 +1,60 @@
+@import 'https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans';
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	background: #E0EEE0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Indie Flower', cursive;
+	font-size: 30px;
+}
+
+p {
+	font-size: 20px;
+}
+
+#header {
+	background: url(forest.jpg);
+	background-size: 100% 100%;
+	background-position: 0 -22em;
+	background-attachment: fixed;
+	padding-bottom: 5em;
+}
+
+#header h1 {
+	color: #fff;
+	font-size: 90px;
+	letter-spacing: 5px;
+	text-shadow: 5px 5px 5px 5px #ccc;
+	text-align: center;
+}
+
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	text-align: center;
+}
+
+#nav {
+	background-color: #55AE3A;
+}
+
+#nav a {
+	color: #FFF;
+	font-size: 30px;
+	text-align: center;
+	text-decoration: none;
+	transition: 0s ease-in-out;
+}
+
+#nav a:hover  {
+	color: #3B5323;
+	transition: 0s ease-in-out;
+}
+
+#footer {
+	text-align: center;
+}
+
