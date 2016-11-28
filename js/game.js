@@ -34,8 +34,6 @@ var direction = 1;
 var direction2 = 1;
 var direction3 = 1;
 var direction4 = 1;
-var TO_RADIANS = Math.PI/180;
-var theAngle = 0;
 
 //declared and intialized player score to hold an int
 //player score starts at 0
