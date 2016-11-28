@@ -11,11 +11,6 @@ var ctx = canvas.getContext("2d");
 
 var isHit = false;
 
-var character2 = new Image();
-character2.src = "Images/gun.png";
-
-var rotatedCoordinates = 0;
-
 //declared and initialized a count variable for timer
 //count starts a 60 seconds and counts down
 
