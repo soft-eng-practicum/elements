@@ -77,6 +77,7 @@ questions[16] = 'What is the correct balanced formula for Sulfur Trioxide?';
 questions[17] = 'What is the correct balanced formula for Phosphorus Pentachloride?';
 questions[18] = 'What is the correct balanced formula for Dinitrogen Tetraoxide?';
 
+<<<<<<< HEAD
 questions[19] = 'What is the correct balanced formula for Copper (II) chloride?';
 questions[20] = 'What is the correct balanced formula for Maganese (V) bromide?';
 questions[21] = 'What is the correct balanced formula for Ammonium Nitrate?';
@@ -92,6 +93,8 @@ questions[30] = 'What is the correct balanced formula for Calcium Bromide?';
 questions[31] = 'What is the correct balanced formula for Potassium Hydride?';
 questions[32] = 'What is the correct balanced formula for Lithium Sulfide?';
 
+=======
+>>>>>>> ac35c31c0492f5b1d51b0d8987c372c3b397dd04
 
 //declared variables for questions and set default values
 var currQuestion = 0;
@@ -130,6 +133,7 @@ answers[16] = "A";
 answers[17] = "D";
 answers[18] = "C";
 
+<<<<<<< HEAD
 answers[19] = "D";
 answers[20] = "C";
 answers[21] = "B";
@@ -145,6 +149,8 @@ answers[30] = "D";
 answers [31] = "B";
 answers [32] = "C";
 
+=======
+>>>>>>> ac35c31c0492f5b1d51b0d8987c372c3b397dd04
 //Declared and intialized an array to display answer choices to the user
 var qa = new Array();
 qa[0] = "a= PCl b= K2Cl2 c= K2Cl d= KCl" ;
@@ -171,6 +177,7 @@ qa[16] = "a= SO3 b= SO2 c= S2O3 d= S2O2";
 qa[17] = "a= P5Cl5 b= P2Cl3 c= PBr5 d= PCl5";
 qa[18] = "a= NO4 b= N4O2 c= N2O4 d= Ni2O4";
 
+<<<<<<< HEAD
 qa[19] = "a= CuCl2 b= ClCu c= CrCl2 d= KuCl";
 qa[20] = "a= MgI5 b= MnI5 c= MI5 d= MnBr";
 qa[21] = "a= NH4NO2 b= NH4NO3 c= NO3NH4 d= NH4NO";
@@ -186,6 +193,8 @@ qa[30] = "a= CBr2 b= CaBr2 c= Br2Ca d= BrCa";
 qa[31] = "a= HK b= KH c= HCl d= HBr";
 qa[32] = "a= LiO b= LiS c= Li2S d= SLi";
 
+=======
+>>>>>>> ac35c31c0492f5b1d51b0d8987c372c3b397dd04
 //Declared and initialized sample questions
 var question1 = "Do you like Chemistry?";
 var question2 = "Are you having Fun?";
