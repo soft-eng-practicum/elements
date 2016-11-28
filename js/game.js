@@ -381,22 +381,21 @@ var drawScene = function() {
   var character = new Image();
   character.src = "Images/gunesdvedf.png";
 
- ctx.drawImage(background,0,0,1280,600);
- ctx.drawImage(bubble1, bubblex,200,80,80);
- ctx.drawImage(bubble2, bubble2x,100,80,80);
- ctx.drawImage(bubble3, bubble3x,300,80,80);
- ctx.drawImage(bubble4, bubble4x,400,80,80);
- ctx.drawImage(character, 550, groundPoint - 80, 80, 80);
+  ctx.drawImage(background,0,0,1280,600);
+  ctx.drawImage(bubble1, bubblex,200,80,80);
+  ctx.drawImage(bubble2, bubble2x,100,80,80);
+  ctx.drawImage(bubble3, bubble3x,300,80,80);
+  ctx.drawImage(bubble4, bubble4x,400,80,80);
+  ctx.drawImage(character, 550, groundPoint - 80, 80, 80);
 
 }
 
-
+//This function calculates the angle between the mouse cursor and the bullet
 var angleBetween = function(p1, p2) {
   return Math.atan2(p2.y-p1.y, p2.x-p1.x);
 }
 
 //We are using aiming coordinates and dials to indicate trajectory
-
 var getAimCoords = function(mousePos) {
 
   var angle = Math.PI/2 - angleBetween(mousePos, shootingCirc);
@@ -420,7 +419,6 @@ var getAimCoords = function(mousePos) {
 }
 
 //The shooting circle is what shows the user where the arrow is going
-
 var shootingCirc = {
  x: 600,
   y: groundPoint-30,
@@ -435,10 +433,8 @@ var drawBackCirc = {
 }
 
 //The draw circles is where the actual object gets drawn into the screen
-
 var drawCircles = function() {
   ctx.beginPath();
-//  ctx.arc(shootingCirc.x, shootingCirc.y, shootingCirc.r, 0, 2*Math.PI);
   ctx.strokeStyle = "rgba(0,0,0,0.5)";
   ctx.stroke();
   ctx.beginPath();
