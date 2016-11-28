@@ -279,6 +279,11 @@ function checkCount()
         }
 }
 
+//This is the function that ends the game when all the questions are done
+function gameEnd(){
+
+}
+
 //Function to check the user's answer and changes to next question if the answer is correct
 function checkAnswer(){
 
@@ -566,7 +571,6 @@ var update = function() {
     }
 
     //this is the code for the fourth bubble
-
     bubble4x += direction4;
     if (bubble4x > 780){
       direction4 = -1;
