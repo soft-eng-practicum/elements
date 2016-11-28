@@ -221,20 +221,9 @@ addEventListener("mouseup", function(evt) {
   rotatedCoordinates = Math.PI/2 - angleBetween(mousePos, shootingCirc);
 }, false);
 
+//This is the most important function of the game as it determines if a collision occurred
+//between bullet and answer object
 function collisionCheck() {
-
-//var theImage = ctx.getImageData(x, y, 25, 25);
-//var pixel = theImage.data;
-//for (var i = 0; n = pixel.length, i < n; i += 1) {
-//if (pixel[i] == 0) {
-//collision = 1;
-
-      //     }
-
-//      bubblex;
-//      bubble2x;
-//      bubble3x;
-//      bubble4x;
 
        if(currentArrowCoorX >= bubble4x && currentArrowCoorX <= bubble4x + 80){
            if(currentArrowCoorY >= 400 && currentArrowCoorY <= 480){
